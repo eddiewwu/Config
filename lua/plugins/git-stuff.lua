@@ -10,7 +10,7 @@ return {
 			vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 			vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 			vim.keymap.set("n", "<leader>gR", function()
-				vim.cmd("!git status")
+				vim.cmd("Git status")
 				vim.cmd("Git pull")
 			end, { desc = "Git refresh (status + pull)" })
 			vim.keymap.set("n", "<leader>gA", ":Git add --all<CR>", { desc = "Git Add All" })
