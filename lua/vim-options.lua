@@ -14,5 +14,10 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+-- Buffer navigation
+vim.keymap.set('n', '<leader>bf', ':bfirst<CR>', { desc = "Jump to first buffer" })
+vim.keymap.set('n', '<leader>bl', ':blast<CR>', { desc = "Jump to last buffer" })
+
 vim.wo.number = true
 
