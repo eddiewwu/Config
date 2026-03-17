@@ -16,17 +16,13 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 -- LSP Configuration
--- Install language servers via Mason: :MasonInstall jdtls gopls pyright ts_ls solargraph html lua_ls gofumpt black
+-- Install language servers via Mason: :MasonInstall jdtls gopls pyright ts_ls html lua_ls lemminx gofumpt black
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     -- JavaScript / TypeScript
     vim.lsp.config('ts_ls', {
-      capabilities = capabilities,
-    })
-    -- Ruby
-    vim.lsp.config('solargraph', {
       capabilities = capabilities,
     })
     -- HTML
@@ -49,15 +45,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.lsp.config('pyright', {
       capabilities = capabilities,
     })
+    -- XML / Maven POM
+    vim.lsp.config('lemminx', {
+      capabilities = capabilities,
+      root_markers = { 'pom.xml', '.git' },
+    })
 
     -- Enable LSPs
     vim.lsp.enable('ts_ls')
-    vim.lsp.enable('solargraph')
     vim.lsp.enable('html')
     vim.lsp.enable('lua_ls')
     vim.lsp.enable('jdtls')
     vim.lsp.enable('gopls')
     vim.lsp.enable('pyright')
+    vim.lsp.enable('lemminx')
 
     -- Format on save (runs before :w completes)
     -- Uses null-ls or LSP formatters based on filetype
