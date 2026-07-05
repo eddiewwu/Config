@@ -31,6 +31,20 @@ return {
       Snacks.dashboard.open()
     end, { desc = "Open Dashboard" })
 
+    -- Picker keymaps (replaces telescope)
+    vim.keymap.set("n", "<leader>f", function()
+      Snacks.picker.files()
+    end, { desc = "Find Files" })
+    vim.keymap.set("n", "<leader>g", function()
+      Snacks.picker.grep()
+    end, { desc = "Grep" })
+    vim.keymap.set("n", "gd", function()
+      Snacks.picker.lsp_definitions()
+    end, { desc = "Goto Definition" })
+    vim.keymap.set("n", "gr", function()
+      Snacks.picker.lsp_references()
+    end, { desc = "References" })
+
     -- Close dashboard when Neo-tree opens so they don't conflict
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "neo-tree",

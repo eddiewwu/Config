@@ -71,8 +71,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
     -- LSP Keymaps
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-    vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+    vim.keymap.set("n", "<leader>gd", function() Snacks.picker.lsp_definitions() end, {})
+    vim.keymap.set("n", "<leader>gr", function() Snacks.picker.lsp_references() end, {})
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
   end,
 })
