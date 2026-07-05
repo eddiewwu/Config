@@ -1,0 +1,5 @@
+[terminal]
+default_shell = "C:/Program Files/Git/bin/bash.exe"
+
+[update]
+channel = "preview"
