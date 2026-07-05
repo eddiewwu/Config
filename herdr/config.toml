@@ -1,5 +1,10 @@
 [terminal]
 default_shell = "C:/Program Files/Git/bin/bash.exe"
 
+[keys]
+prefix = "ctrl+space"
+next_tab = "ctrl+tab"
+previous_tab = "ctrl+shift+tab"
+
 [update]
 channel = "preview"
