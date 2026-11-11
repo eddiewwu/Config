@@ -12,7 +12,7 @@ This repo holds skills, agent instructions, and tool configs. Personal memory fi
 |---|---|---|
 | `agents/` | Model-agnostic global agent instructions (canonical live copy at `~/.config/AGENTS.md`) | High |
 | `claude/` | Claude Code global CLAUDE.md (live copy at `~/.claude/CLAUDE.md`, imports `~/.config/AGENTS.md`) | High |
-| `skills/` | Agent Skills in the standard `SKILL.md` format (doc, mr-review, summary) — one canonical copy shared by Claude Code, GitHub Copilot, Codex, and opencode | Medium |
+| `skills/` | Agent Skills in the standard `SKILL.md` format (doc, mr-review, summary, pr-workflow) — one canonical copy shared by Claude Code, GitHub Copilot, Codex, and opencode | Medium |
 | `.github/` | GitHub Copilot repo instructions (`copilot-instructions.md`, points at `agents/AGENTS.md` and `skills/`) | Medium |
 | `herdr/` | Herdr terminal workspace config (live copy at `%APPDATA%\herdr\config.toml`) | Medium |
 | `tmux/` | tmux configuration (`tmux.conf`) | Medium |
