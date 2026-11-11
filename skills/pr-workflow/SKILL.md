@@ -1,20 +1,18 @@
 ---
 name: pr-workflow
-description: Use when making changes to a GitHub repository - the phased workflow of planning first, then automatically opening a pull request, while merging stays a manual step for the repository owner.
+description: How to deliver changes to a GitHub repository - plan first, then automatically open a pull request, and leave merging as the owner's explicit manual step. Use whenever making repository changes for the owner.
 ---
 
 # pr-workflow
 
-How repository changes are delivered. Agent-agnostic: the same rule applies to Claude Code, GitHub Copilot, Codex, and opencode.
+Deliver repository changes in three phases:
 
-## The three phases
+1. **Plan** - Present the plan first: what changes, in which files, and why. Wait for the owner to see it.
+2. **Auto PR** - Then create the branch, push, and open the pull request automatically - do not ask again for permission to create the PR. One logical change per PR; write a clear title and a body that explains the change and any trade-offs.
+3. **Manual merge** - Never merge. Merging is always the owner's explicit manual step. Report the PR link and stop there.
 
-1. **Plan** - Before touching anything, present a short plan: what will change, in which files, and why. No branches, commits, pushes, or PRs happen before the plan is shown.
-2. **Auto PR** - Once the plan is set, create the branch, commit, push, and open the pull request without asking again. Keep the PR to one logical change, with a clear title and a body that explains what changed and any trade-offs. Verify the PR reads back correctly before reporting it.
-3. **Manual merge** - Merging is always the repository owner's explicit, manual step. Never merge a pull request yourself, and never treat silence as merge approval. If a change needs to land urgently, say so and let the owner merge it.
-
-## Notes
+Rules that apply at every phase:
 
 - Never force push to main.
-- Never commit secrets (API keys, tokens, credentials) - use environment variables.
-- Personal memory files are maintained separately and never belong in a config repo.
+- Never commit secrets - use environment variables.
+- Verify the PR reads back as intended (files, title, body) before reporting it.
