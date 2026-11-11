@@ -8,6 +8,7 @@ local config = wezterm.config_builder()
 config.default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
 
 config.launch_menu = {
+  { label = "Herdr", args = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i", "-c", "herdr" } },
   { label = "Git Bash", args = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" } },
   { label = "PowerShell", args = { "powershell.exe", "-NoLogo" } },
   { label = "Command Prompt", args = { "cmd.exe" } },
@@ -50,15 +51,18 @@ config.scrollback_lines = 10000
 config.automatically_reload_config = true
 
 -- ============================================================
--- Keys — leader Ctrl-a (Ctrl-Space stays free for nvim-cmp
--- completion and tmux prefix). Press Ctrl-a twice to send a
--- literal Ctrl-a through (readline beginning-of-line).
+-- Keys — leader Ctrl-Space, the same leader/prefix as the
+-- tmux prefix and the Herdr prefix, so one key runs the whole
+-- stack. Press Ctrl-Space twice to send a literal Ctrl-Space
+-- through (Herdr/tmux prefix one level down, nvim-cmp
+-- completion). Ctrl-a now reaches the shell untouched
+-- (readline beginning-of-line).
 -- ============================================================
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1500 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1500 }
 
 config.keys = {
-  -- Passthrough: Leader Ctrl-a sends real Ctrl-a to the shell
-  { key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
+  -- Passthrough: Leader Ctrl-Space sends real Ctrl-Space down a level
+  { key = "Space", mods = "LEADER|CTRL", action = act.SendKey({ key = "Space", mods = "CTRL" }) },
 
   -- Splits (tmux-style)
   { key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },

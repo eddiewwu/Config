@@ -1,10 +1,11 @@
-# MR-review Skill
+---
+name: mr-review
+description: Perform code review and bug detection on a pull request, merge request, or set of code changes. Use when asked to review changes, a PR/MR, or a diff.
+---
 
-This skill performs code review and bug detection on pull requests or code changes.
+# mr-review
 
-## Usage
-
-Use this skill when reviewing merge requests or when you want to analyze code for potential issues.
+Review code changes for quality issues and bugs. Works with any agent that supports the SKILL.md format (Claude Code, GitHub Copilot, Codex, opencode).
 
 ## What it does
 

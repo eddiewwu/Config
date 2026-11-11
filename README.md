@@ -12,7 +12,8 @@ This repo holds skills, agent instructions, and tool configs. Personal memory fi
 |---|---|---|
 | `agents/` | Model-agnostic global agent instructions (canonical live copy at `~/.config/AGENTS.md`) | High |
 | `claude/` | Claude Code global CLAUDE.md (live copy at `~/.claude/CLAUDE.md`, imports `~/.config/AGENTS.md`) | High |
-| `skills/` | Claude Code CLI custom skills (doc, mr-review, summary) | Medium |
+| `skills/` | Agent Skills in the standard `SKILL.md` format (doc, mr-review, summary, pr-workflow) — one canonical copy shared by Claude Code, GitHub Copilot, Codex, and opencode | Medium |
+| `.github/` | GitHub Copilot repo instructions (`copilot-instructions.md`, points at `agents/AGENTS.md` and `skills/`) | Medium |
 | `herdr/` | Herdr terminal workspace config (live copy at `%APPDATA%\herdr\config.toml`) | Medium |
 | `tmux/` | tmux configuration (`tmux.conf`) | Medium |
 | `wezterm/` | WezTerm terminal configuration (`wezterm.lua`) | Medium |
@@ -21,10 +22,10 @@ This repo holds skills, agent instructions, and tool configs. Personal memory fi
 ## Restore After a Machine Wipe
 
 1. **Agent instructions:** Copy `agents/AGENTS.md` to `~/.config/AGENTS.md`, and `claude/CLAUDE.md` to `~/.claude/CLAUDE.md`. Then refresh the plain copies for the other tools (`~/.codex/AGENTS.md`, `~/.config/opencode/AGENTS.md`) — see the fan-out rule in `.claude.md`.
-2. **Skills:** Copy `skills/` into your Claude config directory.
+2. **Skills:** Copy each `skills/<name>/` folder into your agent's skills directory — `~/.claude/skills/` for Claude Code, `~/.copilot/skills/` for GitHub Copilot CLI, and the equivalent for other agents. The `SKILL.md` format is agent-agnostic, so the same folders work everywhere.
 3. **tmux:** Copy `tmux/tmux.conf` to `~/.tmux.conf`. Reload with `tmux source-file ~/.tmux.conf`.
-4. **WezTerm:** Copy `wezterm/wezterm.lua` to `~/.wezterm.lua` (`C:\Users\<you>\.wezterm.lua` on Windows). Leader key is `Ctrl-a`.
-5. **Herdr:** Copy `herdr/config.toml` to `%APPDATA%\herdr\config.toml`.
+4. **WezTerm:** Copy `wezterm/wezterm.lua` to `~/.wezterm.lua` (`C:\Users\<you>\.wezterm.lua` on Windows). Leader key is `Ctrl-Space` — the same as the tmux prefix and the Herdr prefix; press it twice to send a literal `Ctrl-Space` through to the app inside.
+5. **Herdr:** Copy `herdr/config.toml` to `%APPDATA%\herdr\config.toml`. Herdr is also in the WezTerm launch menu.
 6. **NeoVim:** Copy `nvim/` to `~/AppData/Local/nvim/` on Windows (`~/.config/nvim/` on Linux/Mac). Low priority.
 
 ## Keeping This Current

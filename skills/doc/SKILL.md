@@ -1,10 +1,11 @@
-# /doc Skill
+---
+name: doc
+description: Generate a README.md for the current project by analyzing its structure, entry points, and tooling. Use when asked to document a project or create or refresh its README.
+---
 
-This skill generates README documentation for projects.
+# doc
 
-## Usage
-
-Use `/doc` command to generate a README.md file for your project.
+Generate README documentation for the current project. Works with any agent that supports the SKILL.md format (Claude Code, GitHub Copilot, Codex, opencode).
 
 ## What it does
 
