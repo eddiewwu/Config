@@ -1,10 +1,11 @@
-# /summary Skill
+---
+name: summary
+description: Summarize file contents or conversation context into concise bullet points with key takeaways. Use when asked to summarize a file, a set of files, or a discussion.
+---
 
-This skill summarizes file contents and conversations.
+# summary
 
-## Usage
-
-Use `/summary` command to get a concise summary of files or conversation context.
+Summarize files or conversations. Works with any agent that supports the SKILL.md format (Claude Code, GitHub Copilot, Codex, opencode).
 
 ## What it does
 
