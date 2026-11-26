@@ -12,4 +12,5 @@
   If you see one, even if it is not caused by what you are working on right now, still get it fixed.
 - For repository changes, work in phases: present the plan first, then create the pull request automatically. Never merge a pull request - merging is always the owner's explicit manual step.
 - Never repeat or duplicate information within or across files or sections. State each fact once, in its canonical place, condensed to one line where possible; cross-reference instead of restating it. When editing, collapse any duplicates you find.
+- Archive only what the owner explicitly names for archiving. Never archive a file or record on your own judgment.
 - Record rules and outcomes only. State the rule and whether its target was met; never record the reasoning behind a decision or why a target was hit.
